@@ -1,0 +1,43 @@
+<div data-role="content">
+	<div class="thank-handler white-gloss shadow-all radius-all">
+		<div class="errorLog"></div>
+		<div class="content-block" id="div_flagsBar">
+			<div>Merci pour votre participation!</div>
+		</div>
+		<div id="form-login">
+			<div>
+				Date / Heure : <b>{{dateTime}}</b>
+			</div>
+			<div>
+				Nom & Prenom : <b>{{identity.name_01}} {{identity.name_02}}</b>
+			</div>
+			<div>
+				Compagnie : <b>{{company}}</b>
+			</div>
+			<div>Vos reponses :</div>
+			<ul style="padding-left:45px">
+			{{#each reponses}}
+				<li style="list-style:circle"><b>{{rNum}} : {{#each res}}<i>{{r}}</i>{{/each}}</b></li>
+			{{/each}}
+			</ul>
+
+		</div>
+	</div>
+	<br /> <br />
+	<!-- <div class="content-block" id="flagsBar">
+		<button class="dark-blue-gloss-welcome" type="submit" id="fSubmit">{{t
+			'K_PRINT'}}</button>
+	</div> -->
+	
+	<!-- <div class="content-block" id="flagsBar">       
+        <div class="dark-blue-gloss-welcome" style="cursor:pointer">{{t
+			'K_PRINT'}}</div>        
+    </div> -->
+    
+    <div id="div_hubVers">       
+        <div class="hubV" id="div_butPrint" style="cursor:pointer">{{t
+			'K_PRINT'}}</div>        
+    </div>
+    
+
+</div>

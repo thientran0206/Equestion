@@ -1,0 +1,57 @@
+.HILI {
+	background: #ffff42;
+}
+
+.fixedFromScrolling {
+	top: 65px;
+	position: fixed;
+	width: inherit;
+	display: none;
+	z-index: 11;
+}
+
+.scrollStyle {
+	width: 300px;
+	height: 200px;
+	overflow-y: scroll; /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch;
+}
+
+.scrollTabStyle {
+	display: block;
+	overflow-x: hidden;
+}
+
+.scrollTabBodyStyle {
+	height: 50%;
+	overflow-y: auto; /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch;
+	display: block;
+}
+
+.divScrollStyleHaft {
+	display: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-height: 400px;
+	height: 30%;
+}
+
+.divScrollStyleFull {
+	display: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-height: 500px;
+	height: 60%;
+}
+
+.divScrollStyleEnd {
+	display: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	max-height: 500px;
+	height: 90%;
+}

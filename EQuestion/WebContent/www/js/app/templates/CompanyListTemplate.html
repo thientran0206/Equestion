@@ -1,0 +1,69 @@
+<div data-role="content" class="ui-content" role="main">
+	<div id="div_toolsBar" class="content-block">
+		<!--  <span class='title' id="userInf"></span>-->
+		<span id="spa_userInf" class="userName" style="padding: 15px"> <span>{{t
+				'K_HELLO'}}</span>
+		</span>
+		<!-- 
+            <input type="text" class="date" name="date" id="datepicker" placeHolder="{{t 'K_PICK_A_DATE'}}" readonly="true"/>
+            <input type="text" class="search" name="search" id="searchFlight" placeHolder="{{t 'K_SEARCH'}}" pattern="[0-9]*"/>
+       	 	-->
+	</div>
+
+	<form id="form-login">
+		<label>Recherche :</label> <input style="text-align: center;"
+			type="text" name="IATA" id="inp_nameRecherche" placeholder="Name" />
+		<button class="dark-blue-gloss" type="submit" id="btn_rSubmit">Chercher</button>
+	</form>
+
+	<ul data-role="listView" class="flights-by-company content-block"
+		id="ul_mainListFlightsUl">
+
+		{{#each companies}}
+		<li class="company company-{{IATA}}" data-company-code="{{IATA}}" data-toggle="tooltip" data-placement="right" title="{{IATA}}">
+			<div 
+				class="plane-tail" data-company-code="{{IATA}}"
+				style="cursor: pointer">
+				{{{getImage logo}}}
+				<div class="company_name">{{IATA}}</div>
+			</div>
+
+		</li> {{/each}}
+
+		<li class="company" id="company-other">
+			<div class="plane-tail" data-company-code="-1"
+				style="cursor: pointer">
+				{{{getImage './img/logo/planesTails_none.png'}}}
+				<div class="company_name">{{t 'K_IATA_OTHER'}}</div>
+			</div>
+		</li>
+
+	</ul>
+</div>
+<script>
+$(document).ready(function(){
+	
+	var comp = null;
+	var companies = App.db.companies;
+	
+	for (var i=0;i<companies.length;i++){
+		comp = companies[i];
+		var nom="-"+comp.IATA;
+		if (comp.IATA =="AF"){
+			//$(".company"+nom).attr("title","Air France");
+			$(".company"+nom).tooltip({
+				content:"Air France"
+			});
+
+		}
+		if (comp.IATA =="VN"){
+			$(".company"+nom).tooltip({
+				content:"Vietnam AirLine"
+			});
+		}
+	}
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+
+</script>

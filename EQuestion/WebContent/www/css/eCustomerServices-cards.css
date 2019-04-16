@@ -1,0 +1,536 @@
+/* Source : http://css.dzone.com/articles/implementing-card-ui-pattern */
+/*          https://github.com/triceam/cards-ui/blob/master/02_multiple_cards_float.html */
+
+/* ################################################################################################################################# */
+/* ######################################################### Divers ################################################################ */
+/* ################################################################################################################################# */
+.ui-content .cardContainer{
+	margin-left: 1em;
+}
+.cardContainer {
+    bottom: 0px;
+    left: 5%;
+    right: 5%;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### Commun ################################################################ */
+/* ################################################################################################################################# */
+.card {
+    width: 200px;  
+    height: 100px;
+    border: 3px solid #CFD6F1;
+    border-radius: 15px;
+    padding: 0px;
+    margin: 15px;
+    overflow: hidden;
+    background-position: bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/CardBackground.jpg');
+}
+
+/* Titres - Centres et vols */
+.card > h1 {
+	text-align: center;
+	margin: 0px;
+	padding: 10px;
+	/*padding-bottom: 0px;*/
+	font-size: 16px;
+	font-weight: 700;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* Titres des blocs de VOL_Accueil */
+.card > h3 {
+	text-align: center;	
+}
+
+.card > p {
+    margin: 0px;
+    padding: 10px;
+}
+
+.float-left .card {
+    float:left;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### CHV_ListeVols ######################################################### */
+/* ################################################################################################################################# */
+/* Zone globale de liste des vols */
+#chv_listeVols_content {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+/* Conteneur de liste des vols */
+.cardContainerVol {
+	/*display: -webkit-box;
+	-webkit-box-orient: horizontal;	
+	-webkit-box-pack: center;	
+	-webkit-box-align: stretch;
+	-webkit-lines: multiple;
+
+	display: -moz-box;	
+	-moz-box-orient: horizontal;
+	-moz-box-pack: center;
+	-moz-box-align: stretch;
+	-moz-box-lines: multiple;*/
+	
+	
+	/*display: -moz-flex;
+	-moz-flex-flow: row wrap;
+	-moz-justify-content: center;*/
+	
+	/* Old version for: iOS app & Android browser display */
+	/*display: -webkit-flex;
+	-webkit-flex-flow: row wrap;
+	-webkit-justify-content: center;*/
+	
+	/* Last version for desktop display */
+	/*display: flex;	
+	flex-flow: row wrap;
+	justify-content:center;*/
+	
+	position: static;
+}
+
+/* Bloc par vol */
+.cardVol {
+	/*-webkit-box-flex: 1.0;
+	-moz-box-flex: 1.0;
+
+	-webkit-flex: 0 1 200px;	
+	-moz-flex: 0 1 200px;	
+	flex: 0 1 200px;*/
+}
+
+/* Zone destination */
+.cardVol > p {
+	padding: 5px;
+	font-size: 12px;
+	font-weight: 400;
+	display: block;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* Image de la compagnie */
+.cardVol-image {
+    width: 100%;
+    height: 30px;
+    padding: 0px;
+    margin: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### VOL_Accueil ########################################################### */
+/* ################################################################################################################################# */
+/* VOL_Accueil : gestion hauteurs 1ere ligne */
+#vol_firstLine {
+ 	display: -webkit-flex;	/* Old version for: iOS app & Android browser display */
+	display: flex;			/* Last version for desktop display */
+}
+
+/* VOL_Accueil : cartes 1ere ligne */
+.cardLarge {
+	margin: 0px;
+	width: 45%;
+	float: left;
+    height: initial;
+    min-height: 300px;
+}
+
+/* VOL_Accueil : espaces 1ere ligne */
+#vol_firstLine > .space {
+	float: left;
+	width: 2%;	
+	visibility: hidden;
+	height: 10px;
+}
+
+/* VOL_Accueil : espacement entre les 2 lignes */
+.lineSpace {
+	width: 100%;	
+	visibility: hidden;
+	height: 15px;
+	float: left;
+}
+
+/* VOL_Accueil : espaces 2eme ligne */
+#vol_secondLine > .space {
+	float: left;
+	width: 2%;	
+	visibility: hidden;
+	height: 10px;
+}
+
+/* VOL_Accueil : cartes 2eme ligne */
+.cardSmall {
+	margin: 0px;
+	margin-bottom: 15px;
+    width: 29.2%;  
+    float: left;
+    min-height: 210px;
+    height: initial;
+}
+
+/* Chargement du cache */
+.loader {
+	width: 92.3%;	
+	height: auto;
+	text-align: center;
+	margin-left: 2%;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### PRH_ListePrestations ################################################## */
+/* ################################################################################################################################# */
+.cardPRH {
+	min-width: 200px;  
+    height: 150px;
+    border: 3px solid #CFD6F1;
+    border-radius: 15px;
+    padding: 0px;
+    margin: 5px;
+    overflow: hidden;
+    background-position: bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/CardBackground.jpg');
+    float: left;
+}
+.cardPRH-image {
+    width:100%;
+    height:100%;
+    background-position:center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    /*background-image:url('http://thumbs.dreamstime.com/z/chef-cook-baker-fruti-food-veges-17750784.jpg');*/
+    text-shadow: none;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### PRH_bra_ListePrestations ############################################## */
+/* ################################################################################################################################# */
+#prestationsTab{
+	border: 2px solid;
+	border-collapse: collapse;
+	margin-bottom: 30px;
+	margin: 0 auto;
+	font-size: 1em;
+}
+
+#prestationsTab td, #prestationsTab th{
+	border: thin solid black;
+	border-left: 0px none white;
+	border-right: 0px none white;
+	text-align: center;
+	padding: 0 10px;
+	background-color: white;
+}
+
+#prestationsTab th{
+	background-color: #0b2d74;
+	color: white;
+	text-shadow: none;
+}
+
+.signaturePart{
+	width: 400px;
+	border: 1px solid;
+	height: 200px;
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.signaturePart > p{
+	margin-left: 30px;
+}
+
+.bra_popup_content div, .bra_popup_button div{
+	display: inline-block;
+}
+
+.bra_popup_content input{
+	text-align: center;
+	width: 70px;
+}
+
+.bra_popup_content, .bra_popup_button{
+	width: 230px;
+	text-align: center;
+	margin: 5px auto;
+}
+
+.bra_popup_content > div{
+	margin: 5px 10px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.bra_popup_content > div[button]{
+	height:40px; 
+	width:40px;
+	background-repeat: no-repeat;
+}
+
+.bra_popup_button > button{
+	display: inline-block;
+	width: 49%;
+}
+
+.popupBra{
+	width: 250px;
+	top: -100px;
+}
+
+#buttonSignature{
+	width: 90%;
+	margin: 0 auto;
+}
+
+#buttonSignature > .blueButton{
+	display: inline-block;
+	width: 29% !important;
+	text-align: center;
+	margin: 10px 0;
+}
+
+#prh_bra_listePrestations .blueButton{
+	width: 362px;
+	display: inline-block;
+}
+
+.bra_signaturePart{
+	width: 810px;
+	margin: 30px auto;
+}
+
+.bra_buttonPart{
+	width: 810px;
+	margin: 0 auto;
+}
+
+#prestationsTab  .bra_qteFin{
+	background-image: url("../img/crayon-icone.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 20px;
+	text-align: right;
+	padding-right: 30px;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### PRA_Nettoyage ######################################################### */
+/* ################################################################################################################################# */
+.cardEquipe {
+	width: 25%;  
+    height: 125px;
+    margin: 15px;
+    float: left;
+}
+.cardEquipe > p:first-child {
+	text-align: center;
+}
+
+.cardEquipe > p {
+	font-size: 1em;
+	padding: 3px;
+} 
+
+/* ################################################################################################################################# */
+/* ######################################################### PRA_PHMR ############################################################## */
+/* ################################################################################################################################# */
+.cardPHMR {
+	width: 30%;  
+    height: 350px;
+    border: 3px solid #CFD6F1;
+    border-radius: 15px;
+    padding: 0px;
+    margin: 15px;
+    overflow: hidden;
+    background-position: bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/CardBackground.jpg');
+    float: left;
+}
+
+.cardPHMR > p {
+	font-size: 1em;
+	margin: 5px;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### COM_Commentaire ####################################################### */
+/* ################################################################################################################################# */
+.com_camera{
+	background-image: url('../img/camera.png');
+	float: right;
+	width: 44px;
+	height: 44px;
+	background-repeat: round;
+	margin-bottom: 5px;
+}
+
+.comParent{
+	width: 95%;
+	margin:0 auto;
+}
+
+.comParent > h3{
+	display: inline-block;
+	width: 600px;
+}
+
+.comText{
+	width: 65%;
+	min-height: 300px;
+	float: left;
+	margin-right: 20px;
+}
+
+.comSaveButton{
+	clear: both;
+	bottom: 20px;
+	position: absolute;
+}
+
+.comText > textArea{
+	min-height: 250px;
+}
+
+.comPictures{
+	width: 30%;
+	float: right;
+	border: 1px solid;
+	height: 345px;
+	margin-top: 10px;
+}
+
+.comPictures > img{
+	margin: 8px;
+	float: left;
+}
+
+.comPictures p{
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 25px;
+	width: 80%;
+}
+
+#popupContent{
+	width: 90%;
+	margin: 20px auto;
+}
+
+#popupContent > textArea{
+	width: 100%;
+	margin: 0 auto;
+	height: 200px;
+}
+
+#popupButton > div{
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### DOF_DetailGalley ###################################################### */
+/* ################################################################################################################################# */
+.cardDOF {
+	width: 10%;
+	min-width: 120px;
+	height: 120px;
+	padding: 0px;
+    float: left;
+    margin: 3px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cardDOF-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### DLO_DetailLogement #################################################### */
+/* ################################################################################################################################# */
+.cardDotationDetail {
+    width: 46%;  
+    border: 3px solid #CFD6F1;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 15px;
+    overflow: hidden;
+    background-position:bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/CardBackground.jpg');
+}
+
+/* ################################################################################################################################# */
+/* ######################################################### DPR_DetailPrestation ################################################## */
+/* ################################################################################################################################# */
+.cardDPR h2 {
+	text-align: center;	
+}
+
+.linkCard {
+	width: 100%;
+	height: inherit;
+	text-align: center;
+}
+
+.dprOption{
+	clear: both;
+}
+
+.deletePresta{
+	color: red !important;
+	padding-right: 5px;
+	text-decoration: none;
+	text-shadow: none;
+	bottom: 0px;
+	right: 0px;
+}
+
+.logementItem input{
+	text-align: center;
+	font-weight: bold;
+}
+
+
+/*
+.rightColumn,
+.leftColumn {
+    display:inline-block;
+    width:49%;
+    vertical-align:top;
+}
+
+.column {
+    display:inline-block;
+    vertical-align:top;
+}*/

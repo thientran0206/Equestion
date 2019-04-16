@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="fr.servair" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>eCustomer</name>
+
+    <description>
+        Servair eCustomer Mobile App.
+    </description>
+
+    <author email="hnv@hnv-tech.com" href="http://hnv-tech.com">
+        H-V Team
+    </author>
+
+    <content src="app.html" />
+	
+	<plugin name="cordova-plugin-whitelist" />
+		
+	<plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
+	<plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />
+	<plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
+	<plugin name="cordova-plugin-inappbrowser" spec="1.0.1" source="pgb" />
+	<plugin name="io.github.pwlin.cordova.plugins.fileopener" spec="1.0.1" source="pgb" />
+	
+	
+	<!-- Bar transparente -->
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <!-- Contenu blanc -->
+    <preference name="StatusBarStyle" value="lightcontent" />
+    
+    <preference name="fullscreen" value="false" />
+	<preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="target-device" value="universal" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="orientation" value="landscape" />
+  
+  
+	<platform name="ios">
+        <icon src="res/ecustomer.png"/>
+    </platform>
+    
+    
+    <platform name="ios">
+        <!-- images are determined by width and height. The following are supported -->
+        <splash src="res/splash-screen/Default~iphone.png" width="320" height="480"/>
+        <splash src="res/splash-screen/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="res/splash-screen/Default-Portrait~ipad.png" width="768" height="1024"/>
+        <splash src="res/splash-screen/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+        <splash src="res/splash-screen/Default-Landscape~ipad.png" width="1024" height="768"/>
+        <splash src="res/splash-screen/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+        <splash src="res/splash-screen/Default-568h@2x~iphone.png" width="640" height="1136"/>
+        <splash src="res/splash-screen/Default-667h.png" width="750" height="1334"/>
+        <splash src="res/splash-screen/Default-736h.png" width="1242" height="2208"/>
+        <splash src="res/splash-screen/Default-Landscape-736h.png" width="2208" height="1242"/>
+    </platform>
+    
+
+    <access origin="*"/>
+</widget>

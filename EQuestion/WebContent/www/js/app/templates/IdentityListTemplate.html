@@ -1,0 +1,60 @@
+<div data-role="content" class="ui-content" role="main">
+	<div class="identities-by-company">
+		<div class="plane-tail" data-company-code="{{IATA}}">
+			{{{getImage logo}}} <br />
+			<div class="company_name">{{IATA}}</div>
+		</div>
+
+	</div>
+	<div id="div_map"></div>
+	{{#if identities}}
+	<div id="div_hubFilters">
+		{{#each identities}}
+		<div class="hub" data-identity-name01="{{name_01}}"
+			data-identity-name02="{{name_02}}" style="cursor: pointer">
+			{{name_01}} {{name_02}}</div>
+		{{/each}}
+	</div>
+	<br /> {{/if}}
+
+	<div id="div_hubVers">
+		<div class="hubV" id="div_butNewID" style="cursor: pointer">{{t
+			'K_IDENTITY_NEW'}}</div>
+	</div>
+
+
+</div>
+<script>
+// Initialize and add the map
+function initMap() {
+			console.log(this.App.company.IATA);
+			var uluru = {lat: 35.652832, lng: 139.839478};
+			if(this.App.company.IATA=="AF"){
+					 uluru = {lat: 48.864716, lng: 2.349014};
+					 var map = new google.maps.Map(
+						  document.getElementById('div_map'), {zoom: 4, center: uluru});
+						  // The marker, positioned at Uluru
+						  var marker = new google.maps.Marker({position: uluru, map: map});
+			}
+			if(this.App.company.IATA=="VN"){
+					 uluru = {lat: 10.762622, lng: 106.660172};
+					 var map = new google.maps.Map(
+						  document.getElementById('div_map'), {zoom: 4, center: uluru});
+						  // The marker, positioned at Uluru
+						  var marker = new google.maps.Marker({position: uluru, map: map});
+			}
+			else{
+					
+				 var map = new google.maps.Map(
+					  document.getElementById('div_map'), {zoom: 4, center: uluru});
+					  // The marker, positioned at Uluru
+					  var marker = new google.maps.Marker({position: uluru, map: map});
+					 
+			}
+			
+		
+}
+    </script>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5v1__J1RmgHLwwsveFeqBeMrHX7kYhE0&callback=initMap">
+    </script>

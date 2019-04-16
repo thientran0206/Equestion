@@ -1,0 +1,45 @@
+
+<!-- content -->
+<div data-role="content">
+	<div class="login-handler white-gloss shadow-all radius-all">
+		<div class="errorLog"></div>
+		<form id="form-login">
+			<button class="dark-blue-gloss-welcome" type="submit" id="btn_submit">{{t
+				'K_SEND'}}</button>
+		</form>
+		<br /> <br />
+	</div>
+	<br /> <br />
+	<div id=div_login_auth>
+	<button id="btn_login" class="dark-blue-gloss-welcome"
+		onclick="openForm()">Authentifier</button>
+		</div>
+	<br /> <br />
+	<div class="content-block" id="div_flagsBar">
+		<p>Precisely You</p>
+	</div>
+
+	<div class="form-popup" id="div_myForm">
+		<form class="form-container">
+			<h1>Login</h1>
+
+			<label for="email"><b>Pseudo</b></label> <input type="text"
+				placeholder="Enter pseudo" name="pseudo" required> <label
+				for="psw"><b>Password</b></label> <input type="password"
+				placeholder="Enter Password" name="psw" required>
+
+			<button type="submit" class="btn">Login</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</form>
+	</div>
+	<p id="versionSoftware">Version 1.0.1</p>
+</div>
+<script>
+	function openForm() {
+		document.getElementById("div_myForm").style.display = "block";
+	}
+
+	function closeForm() {
+		document.getElementById("div_myForm").style.display = "none";
+	}
+</script>

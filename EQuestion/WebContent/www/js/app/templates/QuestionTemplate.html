@@ -1,0 +1,36 @@
+<div data-role="content" class="ui-content" role="main">  	
+ 	<div class="identities-by-company"> 
+	 	<div class="plane-tail" data-company-code="{{IATA}}">
+	         {{{getImage company.logo}}}
+	         <br/>
+	         <div class="company_name">{{company.IATA}}</div>
+	   </div>
+	</div>
+	
+	 <div id="div_hubVers">       
+        <div class="hubV">{{question.q}}</div>        
+    </div>
+    <br/>
+    
+    <div id="div_hubFilters">       
+        {{#each question.res}}        
+        <div class="hub" name="res" flag="false" data-reponse-res="{{r}}" data-reponse-val="{{val}}" style="cursor:pointer">
+        	{{r}}
+       	</div>
+        {{/each}}        
+    </div>
+    <br/>
+    
+    {{#if questionOptional}}
+    <div id="div_hubVers">       
+        <div class="hubV" id="btn_passer" style="cursor:pointer">Passer</div>        
+    </div>
+    {{/if}}
+    
+    {{#if questionMultiple}}
+    <div id="div_hubVers">       
+        <div class="hubV" id="btn_terminer" style="cursor:pointer">Terminer</div>        
+    </div>
+    {{/if}}
+    
+</div>
